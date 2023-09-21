@@ -16,7 +16,7 @@ liga_new.to_csv(nuevo_liga_csv, index=False)
 
 
 ## CREANDO JUGADOR 
-columnas_deseadas = ['player_id', 'name_x','last_season_x','current_club_id_x','date_of_birth','position','market_value_in_eur_x']
+columnas_deseadas = ['player_id', 'name_x','last_season_x','current_club_id_x','date_of_birth','position']
 #filtro = df_jugadores["player_id"] == 148365
 jugadores_new = df_jugadores[columnas_deseadas]
 nuevo_jugador_csv = 'jugador.csv'
@@ -24,7 +24,7 @@ jugadores_new.to_csv(nuevo_jugador_csv, index=False)
 
 
 ## CREANDO CLUB
-columnas_deseadas = ['club_id','name','domestic_competition_id','average_age','net_transfer_record','own_goals','own_position']
+columnas_deseadas = ['club_id','name','domestic_competition_id','average_age','net_transfer_record','own_goals','own_position', 'total_market_value']
 #filtro = df_club['domestic_competition_id'] == 'BE1'
 club_new = df_club[columnas_deseadas]
 nuevo_club_csv = 'club.csv'
@@ -39,13 +39,14 @@ nuevo_partido_csv = 'partido.csv'
 partido_new.to_csv(nuevo_partido_csv, index=False)
 
 ## CREANDO APARICIONES
-columnas_deseadas = ['appearance_id','player_id','yellow_cards','red_cards','goals','assists','minutes_played']
+columnas_deseadas = ['appearance_id','game_id','player_id','yellow_cards','red_cards','goals','assists','minutes_played']
 #filtro = df_apariciones['player_id'] == 148365
 apariciones_new = df_apariciones[columnas_deseadas]
 nuevo_apariciones_csv = 'apariciones.csv'
 apariciones_new.to_csv(nuevo_apariciones_csv, index=False)
 
-
-    
-
-
+## CREANDO TRANSACCION
+columnas_deseadas = ['player_id', 'market_value_in_eur_x','highest_market_value_in_eur','total_market_value','net_transfer_record']
+transaccion_new = df_jugadores[columnas_deseadas]
+nuevo_transaccion_csv = 'transaccion.csv'
+transaccion_new.to_csv(nuevo_transaccion_csv, index=False)
